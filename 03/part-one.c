@@ -30,7 +30,7 @@ int main(void)
     }
 
     file_size = (size_t) s.st_size;
-    cursor = memory = mmap(NULL, file_size, PROT_READ, MAP_PRIVATE, fd, 0);
+    cursor = memory = mmap(NULL, file_size + 10, PROT_READ, MAP_PRIVATE, fd, 0);
 
     while (cursor < (memory + file_size)) {
         if (*cursor++ == 'm' && *cursor++ == 'u' && *cursor++ == 'l' && *cursor++ == '(') {
